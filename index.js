@@ -1,5 +1,8 @@
 // this is the js
 
+let pressarr = ["","","","","",""];
+
+
 function cleargsearch(){
     let gs = document.getElementById('gsearch');
     gs.value = "";
@@ -588,6 +591,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
 // google.select();
 
 (async () => {
+    
     while (true){
         let ee = new Date();
 
@@ -624,6 +628,15 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
     }
 
     let actkey = event.code.replace('Key','').replace('Digit','')
+    let filterletters = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+
+    pressarr[0] = pressarr[1];
+    pressarr[1] = pressarr[2];
+    pressarr[2] = pressarr[3];
+    pressarr[3] = pressarr[4];
+    pressarr[4] = pressarr[5];
+    pressarr[5] = actkey;
+
     
     // if (!gselected){
     //     google.focus();
@@ -673,6 +686,12 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
     if ((actkey == 'Z' || actkey == "Space") && !openedt){
         opentasks();
     }
+
+    if (pressarr[2] == "N" && pressarr[3] == "O" && pressarr[4] == "T" && pressarr[5] == "E"){
+        location.href = "file:///Users/homemac/Desktop/Programming/Otherprograms/notepad/index.html";
+        pressarr = ["","","","","",""];
+    }
+    
 
 }, true);
 })();   
