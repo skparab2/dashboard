@@ -655,6 +655,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
         if (!selected){
             ontile += 1;
             movehighlight(ontile);
+            document.getElementById('tname'+ontile).focus();
         } else {
             // move it down
             deprioritize(lastselected);
@@ -666,6 +667,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
         if (!selected){
             ontile -= 1;
             movehighlight(ontile);
+            document.getElementById('tname'+ontile).focus();
         } else {
             // move it down
             prioritize(lastselected);
@@ -691,6 +693,28 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
         location.href = "file:///Users/homemac/Desktop/Programming/Otherprograms/notepad/index.html";
         pressarr = ["","","","","",""];
     }
+
+    if (pressarr[3] == "N" && pressarr[4] == "E" && pressarr[5] == "W"){
+        addnew();
+        ontile = todo.length - 1;
+        movehighlight(ontile);
+        document.getElementById('tname'+ontile).focus();
+        document.getElementById('tname'+ontile).value = "";
+        pressarr = ["","","","","",""];
+    }
+
+    if (pressarr[3] == "D" && pressarr[4] == "E" && pressarr[5] == "L"){
+        if (document.activeElement === document.getElementById('tname'+ontile)){
+
+        } else {
+            // deletetd(ontile);
+        }
+        deletetd(ontile);
+
+    }
+
+
+    
     
 
 }, true);
