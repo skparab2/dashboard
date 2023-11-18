@@ -164,11 +164,10 @@ input.middle:focus {
 .smallweather{
   font-size: 25px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: rgb(189, 189, 189);
-  text-shadow:  -0.5px 0.5px 0 white, 
-                0.5px 0.5px 0 white, 
-                0.5px -0.5px 0 white, 
-                -0.5px -0.5px 0 white; 
+  
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(189, 189, 189);
   margin: 0px;
   margin-top: 50px;
 }
