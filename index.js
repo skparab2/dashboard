@@ -597,6 +597,9 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
 
         let newc = ee.toLocaleTimeString("en-us", options);
 
+        let newd = ee.toLocaleTimeString("en-us", options1).split(' at')[0];
+
+
         if (newc != time.textContent){
             // fade in fade out
 
@@ -608,6 +611,7 @@ const sleep = ms => new Promise(res => setTimeout(res, ms));
             }
 
             time.textContent = newc;
+            date.textContent = newd;
 
             while (ttrs < 100){
                 time.style.opacity = ttrs/100;
